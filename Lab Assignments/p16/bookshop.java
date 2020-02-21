@@ -1,5 +1,3 @@
-package lab.p16;
-
 class book {
   String publisher, title, author;
   double cost;
