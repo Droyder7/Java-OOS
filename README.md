@@ -113,3 +113,5 @@ Socket
 RMI
 
 32) Write a Java interface that accepts a set of numbers and sorts it. Write a server program to implement it. Now create a client process that sends a set of numbers to the server process through Java RMI technology. Server process in turn sorts the numbers. Client process then prints the set of numbers in sorted order.
+
+[![Run on Repl.it](https://repl.it/badge/github/Droyder7/Java-OOS)](https://repl.it/github/Droyder7/Java-OOS)
