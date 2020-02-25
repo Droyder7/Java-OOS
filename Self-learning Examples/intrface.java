@@ -1,7 +1,7 @@
 // Diamond Problem
 interface ig        // Grand Parent Interface
 {
-    default void print()        //default print method which is need not to override further 
+    default void print()        //default print method with body which is need not to define further but can be overridden 
     {
         System.out.println("\nPrint in ig");
     }
@@ -14,9 +14,19 @@ interface i1 extends ig
 {
     default void show()     //access modifier should be private or default if we want to define a body otherwise it will be an abstract method
     {
-        System.out.println("default show in i1");       // default show in i1
+        System.out.println("default show in i1"); // default show in i1
+    }
+    
+    default void print()        //default print method with body overriding ig print 
+    {
+        ig.super.print();       // calling show method of interface ig explicitly 
+        System.out.println("\nPrint in ig");
     }
 
+    default void abstractPrint()
+    {
+        System.out.println("abstractPrint in i1");
+    }
     void abstractMethod();
 
     default void defaultMethod()
@@ -32,11 +42,12 @@ interface i2 extends ig
     default void defaultMethod()
     {
         System.out.println("i2 default Method");
+        
     }
 
 }
 
-class intrface implements ig,i1,i2          // can implement all type of interface
+class intrface implements i1,i2          // can implement all type of interface bu not super interface
 {
     // The default method show() inherited from i1 conflicts with abstract method show() inherited from i2
     
@@ -63,7 +74,9 @@ class intrface implements ig,i1,i2          // can implement all type of interfa
     
     public void abstractPrint()
     {
-
+        i1.super.abstractPrint();
+        System.out.println("abstractPrint in intrface");
+        // ig.super.print();        illegal approach
     }
 
     public static void main(String[] args) {
@@ -73,6 +86,8 @@ class intrface implements ig,i1,i2          // can implement all type of interfa
 
         i.print();      // interface method because print is overridden
 
-        i.defaultMethod();      // object class method
+        i.defaultMethod(); // object class method
+        
+        i.abstractPrint();
     }
 }

@@ -1,9 +1,13 @@
 class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) {    // always jvm will search for this main method to execute
 
         System.out.println("String[] main");
 
         Main.main("Hello");
+
+        Main m = new Main();
+
+        m.main();
 
     }
 
@@ -16,12 +20,17 @@ class Main {
         }
         
     
-    public static void main(String a1, String a2) {
+        public static void main(String a1, String a2) {
 
-        System.out.println("Two argument main : " + a1 + a2);
+            System.out.println("Two argument main : " + a1 + a2);
 
-        Main.main(3);
-    }
+            Main.main(3);
+        }
+    
+        public void main()
+        {
+            System.out.println("No Argument");
+        }
     
     
     

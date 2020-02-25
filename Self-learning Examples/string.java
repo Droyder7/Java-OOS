@@ -10,7 +10,7 @@ class string
 
         int a = 2020;
 
-        String s3 = s2 + a + "Hello";   // Converts a=2020 to String Literals like "Hello"
+        String s3 = s2 + a + "Batch";   // Converts a=2020 to String Literals like "Hello"
 
         System.out.println(s3);
 
@@ -20,6 +20,8 @@ class string
 
         System.out.println(s4);
 
+        // 2 ways to String objects
+
         String s5 = "JAVA";
         
         String s6 = new String("JAVA");
@@ -27,16 +29,17 @@ class string
         if(s5==s6)      // Check if the two objects refers to the same object or not
             System.out.println("Same Object");
         else
-            System.out.println("Not Same");
+            System.out.println("Not Same");     // not same as the refers to different objects
 
         String s7 = s6;
 
         if(s7==s6)      // Check if the two objects refers to the same object or not
             System.out.println("Same Object");
         else
-            System.out.println("Not Same");
+            System.out.println("Not Same");     // same as the refers to different objects
 
         String s = "String";
+        
         System.out.println(s.length()); // length() returns the no. of characters in string
         
         System.out.println(s.charAt(2)); // returns char at ith index
@@ -49,7 +52,7 @@ class string
 
         System.out.println(s.equalsIgnoreCase("string")); //compares non case-sensitive
         
-        System.out.println(s.compareTo("String")); // compares lexicographically case-sensitive
+        System.out.println(s.compareTo("string")); // compares lexicographically case-sensitive
         
         System.out.println(s.compareToIgnoreCase("string")); // compares lexicographically non case-sensitive
         

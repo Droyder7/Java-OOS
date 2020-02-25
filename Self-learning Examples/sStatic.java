@@ -3,7 +3,7 @@ class sStatic {
     static int d2, staticData=1;
     static String str = "JU";
 
-    static {
+    static {        // will execute only once
         d2 = 10;        // initializing static staticData in static block
         System.out.println("static block 1");       // 1st static block invoked
     }
@@ -14,7 +14,7 @@ class sStatic {
 
     sStatic() {
         count = staticData++;
-        System.out.println("Constructor");      // invoked whenever object without parameter is created
+        System.out.println("No arg Constructor");      // invoked whenever object without parameter is created
     }
 
     static {
@@ -41,9 +41,9 @@ class sStatic {
 
     public static void main(String[] args) {
 
-        //2 static blocks already invoked before executing main
+        //2 static blocks already invoked before execution of any line of main 
 
-        System.out.println("in Main");
+        System.out.println("Starting of Main");
 
         System.out.println("static staticData : " +sStatic.d2);       // Accessing static staticData member directly through class
 
@@ -96,10 +96,10 @@ class sStatic {
 
         System.out.println(sStatic.staticData); // staticData = 3
 
-        System.out.println(s2.staticData);
+        System.out.println(s2.staticData);      // same as above
 
         sStatic s3 = new sStatic();     // count = 3 ;  staticData = 4;
-        System.out.println(s3.staticData);
+        System.out.println(s3.staticData);      // increased by 1
         System.out.println(s3.count);
     }
 } 

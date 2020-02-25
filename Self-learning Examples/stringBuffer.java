@@ -5,11 +5,11 @@ class stringBuffer {
 
         System.out.println(sb.length()+" "+sb.capacity());
                 
-        sb = new StringBuffer(10); // capacity 18 char
+        sb = new StringBuffer(10); // capacity 10 char
         
         System.out.println(sb.length() + " " + sb.capacity());
         
-        sb = new StringBuffer("java"); // length of "java" = 4 + 16 = 20 char capacity
+        sb = new StringBuffer("java"); // (length of "java") 4 + 16 = 20 char capacity
         
         System.out.println(sb.length()+" "+sb.capacity());
         
@@ -25,13 +25,15 @@ class stringBuffer {
         
         System.out.println(sb);
 
-        sb.insert(4, 41.253f);    // insert specified string after the ith character
+        sb.insert(4, 41.253f);    // insert specified string after the ith character or at ith index
 
-        System.out.println(sb);
+        System.out.println(sb+" "+sb.length()+" "+sb.capacity());   // length will include the decimal point also
 
         sb.replace(4, 10, "2");      // replace start to end - 1 index char
 
         System.out.println(sb);
+
+        System.out.println(sb.substring(2,6));      // returns substring from index i to j-1
 
         sb.setCharAt(4, 'o');       // replaces the char at ith index with specified char
 
@@ -45,8 +47,18 @@ class stringBuffer {
 
         System.out.println(sb+" "+sb.capacity());
 
-        sb.ensureCapacity(40);      // if 40 > cap then cap = cap*2 + 2 else cap = 40
+        sb.ensureCapacity(10);      // if n < cap then no change
 
-        System.out.println(sb.capacity());
+        System.out.println(sb + " " + sb.capacity());
+                
+        sb.ensureCapacity(40);      // if n > cap then new_cap = cap*2 + 2 & new_cap > n
+
+        System.out.println(sb + " " + sb.capacity());
+
+        StringBuffer ss = new StringBuffer();
+        
+        ss.ensureCapacity(80);      // if n > cap , new_cap then cap = n
+
+        System.out.println(ss+" "+ss.capacity());
     }
 }

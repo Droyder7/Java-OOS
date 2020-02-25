@@ -59,6 +59,12 @@ class grandParent
     {
         System.out.println("Show In Grand Parent");
     }
+
+    private void print() {
+
+        System.out.println("In Parent print");
+
+    }
 }
 
 class parent extends grandParent
@@ -83,7 +89,9 @@ class parent extends grandParent
         return x;
     }
 
-    final void print() {
+    private final void print() {
+
+        System.out.println("In Parent print");
 
     }
     
@@ -115,9 +123,11 @@ class child extends parent {
 
         System.out.println("Show In Child");
 
+        print();
+
     }
 
-    public int fun(int x)   // here fun is overridden ps: visibility cannot be reduced
+    protected int fun(int x)   // here fun is overridden ps: visibility cannot be reduced
     {
         System.out.println("Child int Fun : "+x);
         fun(4.5);
@@ -126,8 +136,14 @@ class child extends parent {
 
     private double fun(Double x)     // here fun is overloaded ps: visibility can be reduced
     {
-        System.out.println("Child double Fun : "+x);
+        System.out.println("Child double Fun : " + x);
         return x;
+    }
+    
+    private void print() {
+
+        System.out.println("In Child print");
+
     }
     
 }
